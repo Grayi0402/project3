@@ -1,0 +1,86 @@
+<div class="formm">
+<h1 class="header">DANH SÁCH THÔNG BÁO</h1>
+<div>
+  <div>
+    <p class="_select">Loại thông báo:
+      <select>
+        <option value="{{typeNotification._thTin}}">{{typeNotification._thTin}}</option>
+        <option value="{{typeNotification._khCap}}">{{typeNotification._khCap}}</option>
+        <option value="{{typeNotification._deNghi}}">{{typeNotification._deNghi}}</option>
+        <option value="{{typeNotification._khac}}">{{typeNotification._khac}}</option>
+      </select>
+    </p>
+      <p class="_select">Quy mô:
+
+        <select class = "right">
+          <option value="volvo">{{quyMo._toanCty}}</option>
+          <option value="saab">{{quyMo._chiNhanh}}</option>
+          <option value="opel">{{quyMo._nhomNguoi}}</option>
+          <option value="audi">{{quyMo._caNhan}}</option>
+          <option value="audi">{{quyMo._khac}}</option>
+
+        <select>
+          <option value="{{quyMo._toanCty}}">{{quyMo._toanCty}}</option>
+          <option value="{{quyMo._chiNhanh}}">{{quyMo._chiNhanh}}</option>
+          <option value="{{quyMo._nhomNguoi}}">{{quyMo._nhomNguoi}}</option>
+          <option value="{{quyMo._caNhan}}">{{quyMo._caNhan}}</option>
+          <option value="{{quyMo._khac}}">{{quyMo._khac}}</option>
+</select>
+        </select>
+      </p>
+
+  </div>
+      <button type="[button]" id="add" (click)="onAdd()">Thêm</button>
+      <a href="#"><button id="out" class = "rightadd">Xuất</button></a>
+  <div>
+ <!--  <div id="get-out">
+      <a href="#"><button id="out">Xuất</button></a>
+  </div> -->
+    <br>
+    <table>
+      <tr>
+        <th>STT</th>
+        <th>Mã thông báo</th>
+        <th>Tên thông báo</th>
+        <th>Loại thông báo</th>
+        <th>Nội dung</th>
+        <th>Đối tượng</th>
+        <th>Trạng thái</th>
+        <th>Thao tác</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>{{notification.COMPANY_NOTIFICATION_CODE}}</td>
+        <td>{{notification.COMPANY_NOTIFICATION_NAME}}</td>
+        <td>{{notification.COMPANY_NOTIFICATION_TYPE}}</td>
+        <td>{{notification.COMPANY_NOTIFICATION_CONTENT}}</td>
+        <td>{{notification.APPLY_FOR_ID
+}}</td>
+        <td *ngIf="notification.STATUS==1; else elseStop">Hoạt động</td>
+        <ng-template #elseStop>Ngưng hoạt động</ng-template>
+        <td>
+          <button type="[button]" value = "Xóa"id ="add"class="btn-danger">Xóa</button>
+          <button type="[button]" value = "Sửa" id="add" class="btn-danger" (click)="onEdit()">Sửa</button>
+        </td>
+
+      </tr> 
+    </table>
+  </div>
+
+
+
+
+</div>
+</div>
+<br>
+<div id="check-pages">
+  <<
+  <a href="#"><button class="pages-number">1</button></a>
+  <a href="#"><button class="pages-number">2</button></a>
+  <a href="#"><button class="pages-number">3</button></a>
+  >>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
+

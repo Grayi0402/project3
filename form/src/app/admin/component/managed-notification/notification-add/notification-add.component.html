@@ -1,0 +1,39 @@
+<div>
+  <div >
+    <h2>THÊM THÔNG BÁO</h2>
+    <form [formGroup]="frmNote" (ngSubmit)="onSubmitForms()">
+      <div class="form-group">
+        <label>Tên thông báo:</label>
+        <input class="form-control" placeholder="Tên thông báo" formControlName="COMPANY_NOTIFICATION_NAME">
+      </div>
+      <div class="form-group">
+        <label>Loại thông báo: </label>
+        <select name="company_type"  id="id_company_type" formControlName="COMPANY_NOTIFICATION_TYPE">
+          <option value="{{typeNotification._thTin}}">{{typeNotification._thTin}}</option>
+          <option value="{{typeNotification._khCap}}">{{typeNotification._khCap}}</option>
+          <option value="{{typeNotification._deNghi}}">{{typeNotification._deNghi}}</option>
+          <option value="{{typeNotification._khac}}">{{typeNotification._khac}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nội dung thông báo:</label>
+        <input class="form-control" placeholder="Nội dung thông báo" formControlName="COMPANY_NOTIFICATION_CONTENT">
+      </div>
+      <div class="form-group">
+        <label>Đối tượng áp dụng: </label>
+        <select formControlName="APPLY_FOR_ID">
+          <option value="{{quyMo._toanCty}}">{{quyMo._toanCty}}</option>
+          <option value="{{quyMo._chiNhanh}}">{{quyMo._chiNhanh}}</option>
+          <option value="{{quyMo._nhomNguoi}}">{{quyMo._nhomNguoi}}</option>
+          <option value="{{quyMo._caNhan}}">{{quyMo._caNhan}}</option>
+          <option value="{{quyMo._khac}}">{{quyMo._khac}}</option>
+        </select>
+      </div> 
+        <button type="submit" id="back" class="btn btn-success"(click)="back()">Trở về</button>
+
+      <button type="submit" id="add" class="btn btn-danger" (click)="add()">Thêm</button>
+
+    </form>
+  </div>
+</div>
+

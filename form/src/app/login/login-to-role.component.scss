@@ -1,0 +1,82 @@
+form{
+  width: 600px;
+  height: 500px;
+  margin:auto;
+  position: static;
+  background: linear-gradient(#00CC00,black);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top:50px;
+  legend{
+    text-align: center;
+    color: #E6F1D8;
+    
+  }
+  img.logo{
+    height: 128px;
+    width: 128px;
+    margin-left: 236px;
+  }
+  input.username{
+    margin-top: 30px;
+    height: 30px;
+    width: 330px;
+    display: inline-block;
+    margin-left: 150px;
+    background-image: url(./../../assets/hinh/username_24x24.png);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    text-indent: 35px;
+    
+  }
+  input.password{
+    height: 30px;
+    width: 330px;
+    display: inline-block;
+    margin-left: 150px;
+    background-image: url(./../../assets/hinh/password_24x24.png);
+    background-position-y: center;
+    background-repeat: no-repeat;
+    text-indent: 35px;
+    
+ 
+  }
+  input.button{
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    margin-left: 225px;
+    border-radius: 30px;
+    border:none;
+    background-color:#103667;
+    color: white;
+   
+  }
+  input.button:hover{
+    background-color:green;
+    
+  }
+  input.check{
+    width: 15px;
+    height: 14px;
+    margin-left: 150px;
+
+  }
+  label{
+    margin-left: 150px;
+    font-size:14px;
+    color: white;
+
+
+  }
+  h4{
+    text-align: center;
+  
+  }
+  select{
+    margin-left: 120px;
+  }
+  h4.warming{
+    margin-left: 40px;
+  }
+  
+}

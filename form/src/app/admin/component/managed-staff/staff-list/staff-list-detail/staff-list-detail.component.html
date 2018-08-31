@@ -1,0 +1,243 @@
+<header>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</header>
+<!-- *ngIf="staff" -->
+<div>
+  <div class="path">
+    <a href="#">Quản lý nhân sự</a>>>
+    <a href="#">Thông tin nhân viên</a>>>
+    <a href="#">Chi tiết</a>
+  </div>
+  <div class="container">
+    <div class="title">
+      <h1>Thông tin nhân viên</h1>
+    </div>
+    <form [formGroup]='editForm' (ngSubmit)="onSubmitForm()">
+      <div class="content">
+        <div class="content-infomation">
+          <h2 style="color:#000066"></h2>
+          <h3 style="font-style: italic">Ngày sinh:{{editForm.value.birthday | date:"dd/MM/yyyy"}} </h3>
+          <h3 style="font-style: italic">Mã nhân viên:{{editForm.value.code }}</h3>
+        </div>.
+        <div class="content-detail">
+          <div class="column-left">
+            <div class="column">
+              <label class="label1">Địa chỉ thường trú
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="text" name="txt-thuongtru" value="" formControlName='temporaryAddress'
+							 ></span>
+              <br>
+              <br>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.temporaryAddress" [name-control]="'Địa chỉ thường chú'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Số CMND/HC
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="number" name="txt-socmnd" formControlName='identityCard' ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.identityCard" [name-control]="'Số chứng minh nhân dân'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Nơi cấp CMND/HC
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="text" name="txt-noicap" formControlName='placeOfIssue'></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.placeOfIssue" [name-control]="'Nơi cấp chứng minh nhân dân'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Email
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="email" name="txt-email" formControlName='email'></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.email" [name-control]="'Email'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Mã số thuế
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="number"name="txt-sothue"  formControlName='taxCode' ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.taxCode" [name-control]="'Mã số thuế'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Ngày bắt đầu thử việc
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="date"name="txt-ngaythuviec"  formControlName='startProbation' [value]="this.editForm.value.startProbation|date:'yyyy-MM-dd'"></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.startProbation" [name-control]="'Ngày bắt đầu thử việc'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Ngày bắt đầu làm việc
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="date"name="txt-ngayhetthuviec"  formControlName='startWorking' [value]="this.editForm.value.startWorking|date:'yyyy-MM-dd'" ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.startWorking" [name-control]="'Ngày bắt đầu làm việc'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Vị trí
+                <label style="color: red">*</label>
+              </label>
+              <span>
+
+							
+							<select name="position" formControlName="position">
+								<option *ngFor="let po of position" [value]="po.value">{{po.name}}</option>
+							</select>
+						</span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.position" [name-control]="'Vị trí'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">CV cá nhân
+                <label style="color: red">*</label>
+              </label>
+              <span> <i class="fa fa-eye"> Xem  </i></span>
+            </div> </div>
+            <br>
+         
+          <div class="column-right">
+            
+            <div class="column">
+              <label class="label1">Địa chỉ tạm trú
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="text" name="txt-tamtru"  formControlName='permanentAddress'></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.permanentAddress" [name-control]="'Địa chỉ tạm trú'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Ngày cấp CMND/HC
+                <label style="color: red">*</label>
+              </label>
+              <span><input  type="date"name="txt-ngaycap"  formControlName='dateOfIssue' [value]="this.editForm.value.dateOfIssue|date:'yyyy-MM-dd'"  ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.dateOfIssue" [name-control]="'Ngày cấp chứng minh nhân dân'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Số điện thoại
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="tex"name="txt-sdt"  formControlName='phone' ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.phone" [name-control]="'Số điện thoại'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <p> </p>
+            <div class="column">
+              <label class="label1">Số Tài khoản ngân hàng
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="number" name="txt-tknganhang"  formControlName='bankingAccount' ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.bankingAccount" [name-control]="'Tài khoản ngân hàng'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Trình độ
+                <label style="color: red">*</label>
+              </label>
+              <span>
+							<select  formControlName="education">
+								<option *ngFor="let edu of education" [value]="edu.value">{{edu.name}}</option>
+							</select>
+						</span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.education" [name-control]="'Trình độ'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Ngày kết thúc thử việc
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="date" name="txt-ngayhetlam"  formControlName='endProbation' [value]="this.editForm.value.endProbation|date:'yyyy-MM-dd'" ></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.endProbation" [name-control]="'Ngày kết thúc thử việc'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Ngày kết thúc làm việc
+                <label style="color: red">*</label>
+              </label>
+              <span><input type="date" name="txt-ngayhetthuviec"  formControlName='endWorking'  [value]="this.editForm.value.endWorking|date:'yyyy-MM-dd'"></span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.endWorking" [name-control]="'Ngày kết thúc làm việc'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Trạng thái</label>
+              <span>
+							
+							<select name="id" formControlName="lookStatus">
+								<option *ngFor="let item of lookStatus" [value]="item.value">{{item.name}}</option>
+							</select>
+						</span>
+              <p class="validator">
+                <app-validator [control]="editForm.controls.lookStatus" [name-control]="'Trạng thái'">
+                </app-validator>
+              </p>
+            </div>
+            <br>
+            <div class="column">
+              <label class="label1">Các dự án đã tham gia</label>
+              <span> <i class="fa fa-eye"> Xem  </i></span>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="button-confirm">
+          <button id="ignore" [routerLink]="['/admin/staff/staff-list']">Bỏ qua</button>
+          <!-- <button id="update" (click)="onEdit()" [hidden]="!isHidden">
+						Sửa</button> -->
+          <button id="update" type="submit" >Xác nhận</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

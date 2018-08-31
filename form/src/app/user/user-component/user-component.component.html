@@ -1,0 +1,116 @@
+<div class="templa">
+  <header>
+    <div>
+      <p class="quote">Talents Trusted Partner</p>
+      <div class="img">
+        <img [src]="imgLogoITsol" alt="" class="imageLogo">
+        <img [src]="imgFacebook" alt="" class="imageFace">
+        <img [src]="imgTwitter" alt="" class="imageTi">
+        <img [src]="imgInsta" alt="" class="imageInsta">
+      </div>
+      <div class="infor">
+        <p>
+          <img class="email" src="./../../../assets/hinh/email_24x24.png">: itsol@gmail.com</p>
+        <p>
+          <img class="phone" src="./../../../assets/hinh/phone_20x20.png">: 081112255 </p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['index']"><img src="./../../../assets/hinh/home_32x32.png"> Trang chủ</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['staff']" href="#">Thông tin nhân viên
+					</a>
+          
+        </li>
+        
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['notification']">Thông báo</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['project']">Dự án của tôi
+					</a>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['salary']">Lương
+						<img src="./../../../assets/hinh/down_arrow_32_32.png" alt="">
+					</a>
+          <ul>
+            <li>
+              <a>Bảng lương</a>
+            </li>
+            <li>
+              <a>Danh sách các bảng lương</a>
+            </li>
+          </ul>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['timesheet']">Quản lí chấm công<img src="./../../../assets/hinh/down_arrow_32_32.png" alt="">
+					</a>
+          <ul>
+            <li>
+              <a>Bảng chấm công</a>
+            </li>
+            <li>
+              <a>Danh sách chấm công</a>
+            </li>
+            <li>
+              <a>Check in</a>
+            </li>
+            <li>
+              <a>Check out</a>
+            </li>
+          </ul>
+        </li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['login']" href="#" (click)="logOutUser()">
+						<img src="./../../../assets/hinh/login_32x32.png" alt=""> Logout</a>
+        </li>
+      </ul>
+      <div></div>
+    </nav>
+  </header>
+  <div class="break"></div>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+  <footer class="footer">
+    <address class="main">
+      <h3>
+				Trụ sở chính
+			</h3>
+      <p>
+        <img src="./../assets/hinh/location_24x24.png"> Tầng 3, Tòa nhà 3A, Ngõ 82 Duy Tân, Cầu Giấy, Hà Nội
+      </p>
+      <p>
+        <img src="./../assets/hinh/call_24x24.png"> +84.904.29.05.83
+      </p>
+      <p>
+        <img src="./../assets/hinh/mail_24x24_black.png"> cuongdc@itsol.vn
+      </p>
+      <p>
+        <img src="./../assets/hinh/website_24x24.png"> http://itsol.vn/
+      </p>
+    </address>
+    <address class="branch">
+      <h3>Chi Nhánh</h3>
+      <p>
+        <img src="./../assets/hinh/location_24x24.png"> Đà Nẵng
+      </p>
+      <p>
+        <img src="./../assets/hinh/location_24x24.png"> Hồ Chí Minh
+      </p>
+    </address>
+    <address class="contact">
+      <h3>Liên hệ</h3>
+      <p>
+        <img src="./../assets/hinh/call_24x24.png">+ 84.96.719.5555</p>
+      <p>
+        <img src="./../assets/hinh/call_24x24.png">+ 84.901.429.661</p>
+      <p>
+        <img src="./../assets/hinh/call_24x24.png">+ 8190-6589-9490</p>
+    </address>
+  </footer>
+</div>
