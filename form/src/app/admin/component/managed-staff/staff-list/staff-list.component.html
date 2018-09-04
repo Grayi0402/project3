@@ -76,6 +76,7 @@
 						<th>Tình trạng hợp đồng</th>
 						<th>Dự án đang làm</th>
 						<th>Trạng thái</th>
+						<th></th>
 						
 					</tr>
 				</thead>
@@ -97,10 +98,10 @@
 						<td></td>
 						<td></td>
 
-						<td *ngIf="staff.lookStatus == 1 ">Đang làm việc</td>
-						<td *ngIf="staff.lookStatus == 0 ">Đã nghỉ việc</td>
-						<td *ngIf="staff.lookStatus == 2 ">Đang xem xét</td>
-						<td *ngIf="staff.lookStatus == -1">Khác</td>
+						<td *ngIf="item.lookStatus == 1 ">Đang làm việc</td>
+						<td *ngIf="item.lookStatus == 0 ">Đã nghỉ việc</td>
+						<td *ngIf="item.lookStatus == 2 ">Đang xem xét</td>
+						<td *ngIf="item.lookStatus == -1">Khác</td>
 
 						<td><button id="detail" 
  							[routerLink]="['/admin/staff', item.id,'edit']"
@@ -108,7 +109,7 @@
 									[isDisable]="isDisplay"</span> -->
 								Chi tiết</button>
 							
-							<i class="fa fa-remove" id="delete"></i>
+							<i class="fa fa-remove" id="delete" (click)="onDeleteStaff(item.id)"></i>
 						</td>
 					</tr>
 				</tbody>
